@@ -1,0 +1,17 @@
+{
+  "users": [
+    {
+      "name": "Sean Maxwell",
+      "email": "sean.maxwell@gmail.com",
+      "pwdHash": "$2a$12$boRnRRoiXSJ3xiZUJyiJBepVj6A9anZ.Tyh1QQcWlgUXrw/fYAMKu",
+      "id": 232268895668
+    },
+    {
+      "name": "Facundo",
+      "email": "facundorc@gmail.com",
+      "pwdHash": "$2a$12$.wxIdIWI0.xDl/ksBVMktuQ9lx.0FLmrVApdRAM3xCcquHN79GrIW",
+      "role": 3107,
+      "id": 232268895663
+    }
+  ]
+}

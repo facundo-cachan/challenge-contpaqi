@@ -1,0 +1,29 @@
+{
+  "_id": "64be142320573c75c001624b",
+  "index": 0,
+  "title": "irure",
+  "name": "aliquip",
+  "isActive": false,
+  "picture": "http://placehold.it/32x32",
+  "price": 940,
+  "address": "385 Newton Street, Courtland, New Hampshire, 6002",
+  "about": "Cillum sit reprehenderit Lorem est. Veniam fugiat ut aliqua pariatur dolore nulla do exercitation eu excepteur nostrud voluptate consequat consequat. Officia Lorem commodo minim esse laboris labore quis dolore incididunt eiusmod nostrud. Aliqua cillum labore aute mollit fugiat ipsum ullamco.",
+  "registered": "2020-05-19T08:18:14 +05:00",
+  "latitude": -81.023178,
+  "longitude": 157.862006,
+  "followers": 25,
+  "likes": 55,
+  "tags": [
+    "anim",
+    "aute",
+    "laboris",
+    "adipisicing",
+    "eu",
+    "eiusmod",
+    "incididunt"
+  ],
+  "friends": {
+    "id": 0,
+    "quantity": 3
+  }
+}

@@ -1,0 +1,55 @@
+{
+  "notifications": {
+    "code": "",
+    "message": "Operacion exitosa",
+    "timestamp": "2023-06-23T02:49:36.023596096Z"
+  },
+  "data": {
+    "id": null,
+    "status": {
+      "id": 1,
+      "label": "Programada"
+    },
+    "totals": {
+      "subtotal": 15.8000,
+      "iva": 0,
+      "discount": 0,
+      "shipment": 0,
+      "total": 15.8000
+    },
+    "products": [
+      {
+        "id": 25328,
+        "itemId": null,
+        "description": "Pasta Yemina fideo cambray bolsa 200gr",
+        "discount": {
+          "with_discount": {
+            "units": 5,
+            "price": 6.0,
+            "total": 30.0
+          },
+          "without_discount": {
+            "units": 5,
+            "price": 8.0,
+            "total": 40.0
+          }
+        },
+        "quantity": 14,
+        "total": 70,
+        "url_img": "--"
+      }
+    ],
+    "store": {
+      "id": null,
+      "name": "Test Store patch second",
+      "address": "2124 Rahul Landing",
+      "reference": "Calle"
+    },
+    "order_cpg_id": "133",
+    "cpg_id": "1",
+    "estimate_delivery_date": "2023-03-30T06:00:00Z",
+    "vendor_type": "Pre ventista",
+    "products_count": 1,
+    "payment_method": "EFECTIVO"
+  }
+}
