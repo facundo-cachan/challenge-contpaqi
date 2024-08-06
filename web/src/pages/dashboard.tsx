@@ -1,60 +1,25 @@
-import { useEffect, useState } from "react";
-import { useAuth } from "../services/context/auth";
-import _fecth from "../services/fetch";
+import logout from "../services/auth/logout";
 
-type User = {
-  name: string;
-  role: string;
-  picture: string;
-}
-type ContextProps = {
-  user: User | null;
-  loggedIn: boolean | null;
-  checkLoginState: () => Promise<void>
-};
 type PostProps = {
   title: string;
   body: string;
 };
 
-
+const posts: PostProps[] = [
+  { title: 'Post 1', body: 'Body 1' },
+  { title: 'Post 2', body: 'Body 2' },
+  { title: 'Post 3', body: 'Body 3' },
+];
 const Dashboard = () => {
-  const { user, loggedIn, checkLoginState } = useAuth();
-  const [posts, setPosts] = useState<PostProps[]>([]);
-/* 
-  useEffect(() => {
-    (async () => {
-      if (loggedIn === true) {
-        try {
-          // Get posts from server
-          const { data: { posts } } = await _fecth({ url: 'user/posts'})
-          setPosts(posts);
-        } catch (err) {
-          console.error(err);
-        }
-      }
-    })();
-  }, [loggedIn])
- */
-  const handleLogout = async () => {
-    try {
-      await _fecth({ url: 'auth/logout'});
-      // Check login state again
-      checkLoginState();
-    } catch (err) {
-      console.error(err);
-    }
-  }
-
   return (
     <>
-      <h3>Dashboard</h3>
-      <button className="btn" onClick={handleLogout} >Logout</button>
-      <h4>{user?.name}</h4>
+      <h3>Dashboard Page</h3>
+      <button className="btn" onClick={() => logout({ token: '1q2w3e4rasdasd' })} >Logout</button>
+      {/* <h4>{user?.name}</h4>
       <br />
       <p>{user?.role}</p>
       <br />
-      <img src={user?.picture} alt={user?.name} />
+      <img src={user?.picture} alt={user?.name} /> */}
       <br />
       <div>
         {posts.map(({ title, body }: PostProps) => <div key={title}>

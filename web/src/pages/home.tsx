@@ -1,12 +1,15 @@
-import Login from './login';
-import Dashboard from './dashboard';
-import { useAuth } from '../services/context/auth';
+import selectorSession from '../services/recoil/session';
+import { useRecoilValue } from 'recoil';
 
 const Home = () => {
-  const { loggedIn } = useAuth();
-  if (loggedIn === true) return <Dashboard />;
-  if (loggedIn === false) return <Login />
-  return <h3>Hi</h3>
+  const { token } = useRecoilValue(selectorSession);
+  
+  return (
+    <div>
+      <h3>Home Page</h3>
+      <pre>{JSON.stringify(token)}</pre>
+    </div>
+  )
 }
 
 export default Home

@@ -1,20 +1,19 @@
-import React from 'react';
+// import { AuthStatus } from '../components';
+import { Link, Outlet } from 'react-router-dom';
 
-import { useAuth } from '@/services/context/auth';
+const Layout = (props: any): JSX.Element => (
+  <div>
+    <h1>Auth Example using RouterProvider</h1>
+    <h4>Layout Page Props</h4>
+    <pre>{JSON.stringify(props, null, 2)}</pre>
 
-type DefaultLayoutProps = {
-  children: React.ReactNode;
-};
+    {/* <AuthStatus /> */}
 
-const DefaultLayout = ({ children }: DefaultLayoutProps) => {
-  const { loggedIn, user } = useAuth();
+    <Link to="/dashboard">Dashboard</Link>
 
-  return (
-    <body>
-      {children}
-    </body>
-  )
+    <Outlet />
 
-}
+  </div>
+);
 
-export default DefaultLayout;
+export default Layout;

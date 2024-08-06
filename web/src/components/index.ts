@@ -1,0 +1,1 @@
+export { default as AuthStatus } from './molecules/auth/status';

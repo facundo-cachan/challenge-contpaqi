@@ -20,7 +20,7 @@ const AuthContextProvider = ({ children }: { children: React.ReactNode }) => {
 
   const checkLoginState = useCallback(async () => {
     try {
-      const response = await _fecth({ method: 'post', url: 'auth/signIn/', data: { email: 'yo@facundo-cachan.dev', password: '1q2w3e4r' } });
+      const response = await _fecth({ method: 'post', url: 'auth/login/', data: { email: 'yo@facundo-cachan.dev', password: '1q2w3e4r' } });
       const user = response?.data?.user;
 
       if (user) {
