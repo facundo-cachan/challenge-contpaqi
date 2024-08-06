@@ -25,10 +25,8 @@
     "noEmit": true,
     "jsx": "react-jsx"
   },
-  "exclude": [
-    "__test__"
-  ],
   "include": [
-    "src"
+    "src",
+    "__test__"
   ]
 }

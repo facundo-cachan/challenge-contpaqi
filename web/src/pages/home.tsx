@@ -6,7 +6,7 @@ const Home = () => {
   const { loggedIn } = useAuth();
   if (loggedIn === true) return <Dashboard />;
   if (loggedIn === false) return <Login />
-  return <></>;
+  return <h3>Hi</h3>
 }
 
 export default Home
