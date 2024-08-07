@@ -1,7 +1,4 @@
-type HeaderProps = {
-  className?: string;
-  children?: React.ReactNode | React.ReactNode[];
-}
+import HeaderProps from "./types"
 
 const Header = ({ children, className }: HeaderProps) => (<header className={`min-w-full ${className}`}>{children}</header>)
 

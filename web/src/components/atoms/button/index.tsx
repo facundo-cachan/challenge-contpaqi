@@ -7,18 +7,16 @@ const Button = ({ children, onClick = () => console.log('Click', children), ...p
   props.role = props.role ?? 'button';
 
   return (
-    <button className="transition ease-in-out delay-150 bg-blue-500 hover:-translate-y-1 hover:scale-110 hover:bg-indigo-500 duration-300" {...props}>{children}</button>
+    <button className="transition duration-300 ease-in-out delay-150 bg-blue-500 hover:-translate-y-1 hover:scale-110 hover:bg-indigo-500" {...props} onClick={onClick}>{children}</button>
   );
 }
 
 const StyledButton = styled(Button)`
-  background: ${props => props.$primary ? "#BF4F74" : "white"};
-  color: ${props => props.$primary ? "white" : "#BF4F74"};
-
+  background: ${props => props.$primary ? "blue" : "gray-light"};
+  color: ${props => props.$primary ? "purple" : "gray-dark"};
   font-size: 1em;
   margin: 1em;
   padding: 0.25em 1em;
-  border: 2px solid #BF4F74;
   border-radius: 3px;
 `;
 

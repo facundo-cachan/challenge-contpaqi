@@ -1,17 +1,26 @@
-import { Button, Link } from '../components';
+import { HeaderResponsive, Link } from '../components';
 import { Outlet } from 'react-router-dom';
 
+import type { MenuItemProps } from '../components/organisms/nav/types';
+
+const items: MenuItemProps[] = [
+  {
+    path: '/dashboard',
+    label: 'Dashboard',
+    icon: null,
+  },
+  {
+    path: '/logout',
+    label: 'Logout',
+    icon: null,
+  }
+]
 const Layout = (): JSX.Element => (
-  <div className="flex flex-col">
-    <h1>Auth Example using RouterProvider</h1>
+  <main className="flex flex-col">
     {/* <h3 className='py-6'>Hi, {user?.name}</h3> */}
-    <div className="flex flex-row w-full justify-between py-4">
-      <Link to="/dashboard">Dashboard</Link>
-      <Link to="/logout" className="text-4xl">Logout</Link>
-      <Button $primary className="border-2 border-red-500">Primary</Button>
-    </div>
+    <HeaderResponsive items={items} />
     <Outlet />
-  </div>
+  </main>
 );
 
 export default Layout;

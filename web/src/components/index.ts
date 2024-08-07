@@ -6,7 +6,11 @@ export { default as Image } from './atoms/image';
 
 export { default as Aside } from './molecules/aside';
 export { default as Card } from './molecules/card';
+export { default as HeaderResponsive } from './molecules/header';
 
 export { default as Nav } from './organisms/nav';
 export { default as Head } from './organisms/head';
 export { default as Header } from './organisms/header';
+
+export { default as CardMovie } from './organisms/cards/movie';
+export { default as ShoppingCart } from './organisms/shoopCart';

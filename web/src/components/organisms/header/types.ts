@@ -1,8 +1,6 @@
-import type { MenuItemProps } from "../../organisms/nav/types";
-
 type HeaderProps = {
+  className?: string;
   children?: React.ReactNode | React.ReactNode[];
-  items: MenuItemProps[];
 }
 
 export default HeaderProps;

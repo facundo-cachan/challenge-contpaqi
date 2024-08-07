@@ -7,8 +7,6 @@ import routes from './routes';
 
 import { RecoilRoot } from 'recoil';
 
-import logo from './logo.svg';
-
 import './App.css';
 
 const logError = (error: Error) => {
@@ -24,21 +22,14 @@ const Fallback = ({ error, resetErrorBoundary }: any) => (
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        { /* @ts-ignore */}
-        <img src={logo} className="App-logo" alt="logo" />
-        <ErrorBoundary FallbackComponent={Fallback} onError={logError}>
-
-          <RecoilRoot>
-            <RecoilNexus />
-            <Suspense fallback={<div>Loading...</div>}>
-              <RouterProvider router={routes} fallbackElement={<p>Initial Load...</p>} />
-            </Suspense>
-          </RecoilRoot>
-        </ErrorBoundary>
-      </header>
-    </div>
+    <ErrorBoundary FallbackComponent={Fallback} onError={logError}>
+      <RecoilRoot>
+        <RecoilNexus />
+        <Suspense fallback={<div>Loading...</div>}>
+          <RouterProvider router={routes} fallbackElement={<p>Initial Load...</p>} />
+        </Suspense>
+      </RecoilRoot>
+    </ErrorBoundary>
   );
 }
 
