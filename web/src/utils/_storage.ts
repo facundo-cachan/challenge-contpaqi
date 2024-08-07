@@ -13,7 +13,7 @@ const getData = (name: string) => {
 }
 
 const setData = async (name: string, data: any) => {
-  Storage.setItem(name, JSON.stringify(data))
+  Storage.setItem(name, data);
 }
 
 const deleteData = async (name: string) => {

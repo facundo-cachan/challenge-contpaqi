@@ -1,25 +1,24 @@
+import { deleteData, getData } from "../../utils/_storage";
 import _fecth from "../fetch";
-import selectorSession from "../recoil/session";
-import { setRecoil } from "../recoil/nexus";
+import { resetRecoil } from "../recoil/nexus";
+import selectorSession, { key } from "../recoil/session";
 
-type LogOutProps = {
-  token: string;
-}
-
-const logout = async (data: LogOutProps) => {
+const logout = async () => {
+  const data = { token: getData(key) };
   try {
-    const response = await _fecth({ method: 'delete', url: 'auth/logout', data });
-    const user = response?.data?.user;
+    const response = await _fecth({ method: 'post', url: 'auth/logout', data });
+    const { redirectTo } = response?.data ?? undefined;
 
-    if (user) {
-      setRecoil(selectorSession, null)
+    if (redirectTo) {
+      resetRecoil(selectorSession);
+      deleteData(key);
+      return true
     }
-
   } catch (err) {
     console.error(err);
   }
 
-  return null
+  return false;
 };
 
 export default logout;

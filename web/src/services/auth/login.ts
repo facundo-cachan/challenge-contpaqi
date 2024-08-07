@@ -1,7 +1,6 @@
 import _fecth from "../fetch";
 import selectorSession from "../recoil/session";
 import { setRecoil } from "../recoil/nexus";
-// import { deleteData } from "../../utils/_storage";
 
 type LoginProps = {
   email: string;
@@ -9,16 +8,15 @@ type LoginProps = {
 }
 
 const login = async (data: LoginProps) => {
-  console.log('service login', data);
   try {
-    const response = await _fecth({ method: 'post', url: 'auth/login/', data });
-    const { user } = response?.data;
+    const response: any = await _fecth({ method: 'post', url: 'auth/login/', data });
+    const { token, ...props } = response?.data ?? undefined;
 
-    if (user) {
-      console.log(user);
-      setRecoil(selectorSession, user);
-      // deleteData('session');
+    if (token) {
+      setRecoil(selectorSession, token);
     }
+
+    return props
   } catch (err) {
     console.error(err);
   }

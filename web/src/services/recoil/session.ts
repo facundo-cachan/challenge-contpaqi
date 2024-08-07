@@ -6,10 +6,10 @@ import { atom, selector } from 'recoil';
 
 import persistAtom from './persistAtom';
 
-const key = 'session';
+export const key = process.env.REACT_APP_SESSION_SECRET ?? 'session';
 
-export const session = atom({
-  default: {},
+export const session = atom<string | null>({
+  default: null,
   key,
   effects: [persistAtom(key)],
 })

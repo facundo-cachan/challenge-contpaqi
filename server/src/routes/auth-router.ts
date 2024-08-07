@@ -1,14 +1,16 @@
+// TODO: Implement the oaut => https://github.com/node-/express-oauth-server
+
 import { Router } from "express"
-import authService from "@services/auth-service"
+// import authService from "@services/auth-service"
 import { ParamMissingError } from "@shared/errors"
 import StatusCodes from "http-status-codes"
-import logger from "jet-logger";
 
 import type { Request, Response } from "express"
 
 // Constants
 const router = Router()
 const { OK } = StatusCodes
+const tokenSession = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZSI6IkZhY3VuZG8iLCJyb2xlIjoiYWRtaW4iLCJnaXRodWJJRCI6IjI5Njk2MjQzIiwiaWF0IjoyMDE2MjM5MDIyfQ.CVcDPNlFzmagx1vGwvMxMovhFE0YOiesOvF8CSY1m40'
 
 // Paths
 export const p = {
@@ -35,14 +37,10 @@ export const cookieProps = Object.freeze({
  * Login a user.
  */
 router
-  .get(p.logout, (_: Request, res: Response) => {
-    const { key, options } = cookieProps
-    res.clearCookie(key, options)
-    return res.status(OK).end()
-  })
-  .post(p.signIn, (req: Request, res: Response) => {
+  .post(p.login, (req: Request, res: Response) => {
     const { email, password } = req.body;
     console.log({ email, password });
+
     if (!email || !password) {
       return res.status(OK).json({
         error: new ParamMissingError().message,
@@ -50,17 +48,20 @@ router
     }
     if (email === 'yo@facundo-cachan.dev' && password === '1q2w3e4r') {
       // const user = authService.login(email, password);
-      const user = {
-        name: 'Facundo',
-        role: 'admin',
-        picture: 'https://avatars.githubusercontent.com/u/12345678?v=4'
-      }
-      return res.status(OK).json({ user }).end()
+      return res.status(OK).json({ token: tokenSession, message: 'Welcome', redirectTo: '/dashboard' }).end()
     }
 
     return res.status(OK).json({
       message: 'Bad credentials'
     }).end()
+  })
+  .post(p.logout, (req: Request, res: Response) => {
+    const { token } = req.body;
+    // const user = authService.logout(token);
+    if (token === tokenSession) {
+      return res.status(OK).json({ message: 'Good Bye', redirectTo: '/'}).end()
+    }
+    return res.status(OK).json({ message: 'Bad token' }).end()
   })
 
 // Export router
