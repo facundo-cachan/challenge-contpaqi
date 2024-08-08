@@ -8,11 +8,7 @@
     {
       "adult": false,
       "backdrop_path": "/9l1eZiJHmhr5jIlthMdJN5WYoff.jpg",
-      "genre_ids": [
-        28,
-        35,
-        878
-      ],
+      "genre_ids": [28, 35, 878],
       "id": 533535,
       "original_language": "en",
       "original_title": "Deadpool & Wolverine",
@@ -28,11 +24,7 @@
     {
       "adult": false,
       "backdrop_path": "/2RVcJbWFmICRDsVxRI8F5xRmRsK.jpg",
-      "genre_ids": [
-        27,
-        878,
-        53
-      ],
+      "genre_ids": [27, 878, 53],
       "id": 762441,
       "original_language": "en",
       "original_title": "A Quiet Place: Day One",
@@ -48,12 +40,7 @@
     {
       "adult": false,
       "backdrop_path": "/stKGOm8UyhuLPR9sZLjs5AkmncA.jpg",
-      "genre_ids": [
-        16,
-        10751,
-        12,
-        35
-      ],
+      "genre_ids": [16, 10751, 12, 35],
       "id": 1022789,
       "original_language": "en",
       "original_title": "Inside Out 2",
@@ -69,12 +56,7 @@
     {
       "adult": false,
       "backdrop_path": "/lgkPzcOSnTvjeMnuFzozRO5HHw1.jpg",
-      "genre_ids": [
-        16,
-        10751,
-        35,
-        28
-      ],
+      "genre_ids": [16, 10751, 35, 28],
       "id": 519182,
       "original_language": "en",
       "original_title": "Despicable Me 4",
@@ -90,10 +72,7 @@
     {
       "adult": false,
       "backdrop_path": "/tqSg1hHiSWhHAhnjDhhevaFGsP0.jpg",
-      "genre_ids": [
-        28,
-        18
-      ],
+      "genre_ids": [28, 18],
       "id": 1066262,
       "original_language": "en",
       "original_title": "The Convert",
@@ -109,12 +88,7 @@
     {
       "adult": false,
       "backdrop_path": "/Akv9GlCCMrzcDkVz4ad8MdLl9DK.jpg",
-      "genre_ids": [
-        16,
-        35,
-        10751,
-        12
-      ],
+      "genre_ids": [16, 35, 10751, 12],
       "id": 748783,
       "original_language": "en",
       "original_title": "The Garfield Movie",
@@ -130,10 +104,7 @@
     {
       "adult": false,
       "backdrop_path": "/c3rwwFFVbkyEI6wPtpPd9lvovPW.jpg",
-      "genre_ids": [
-        28,
-        36
-      ],
+      "genre_ids": [28, 36],
       "id": 1311550,
       "original_language": "en",
       "original_title": "House of Ga'a",
@@ -149,12 +120,7 @@
     {
       "adult": false,
       "backdrop_path": "/6Vbm2nHxHMlZZ199fmZtMytpFvK.jpg",
-      "genre_ids": [
-        28,
-        53,
-        35,
-        18
-      ],
+      "genre_ids": [28, 53, 35, 18],
       "id": 1309923,
       "original_language": "es",
       "original_title": "No negociable",
@@ -170,11 +136,7 @@
     {
       "adult": false,
       "backdrop_path": "/dsGwCEO8tda4FlgHKvL95f0oQbH.jpg",
-      "genre_ids": [
-        16,
-        878,
-        28
-      ],
+      "genre_ids": [16, 878, 28],
       "id": 1209290,
       "original_language": "en",
       "original_title": "Justice League: Crisis on Infinite Earths Part Three",
@@ -190,10 +152,7 @@
     {
       "adult": false,
       "backdrop_path": "/w22yUH5pAZ3CcTjbw9GEzPd5wxs.jpg",
-      "genre_ids": [
-        878,
-        35
-      ],
+      "genre_ids": [878, 35],
       "id": 1242372,
       "original_language": "zh",
       "original_title": "从21世纪安全撤离",
@@ -209,12 +168,7 @@
     {
       "adult": false,
       "backdrop_path": "/dn3gbDpXPSwC6saMJOHkCiFA9jn.jpg",
-      "genre_ids": [
-        14,
-        12,
-        10751,
-        35
-      ],
+      "genre_ids": [14, 12, 10751, 35],
       "id": 974262,
       "original_language": "en",
       "original_title": "Descendants: The Rise of Red",
@@ -230,10 +184,7 @@
     {
       "adult": false,
       "backdrop_path": "/iIvjwrDPQHCU4NjbbKpNs88uk6G.jpg",
-      "genre_ids": [
-        28,
-        35
-      ],
+      "genre_ids": [28, 35],
       "id": 1048241,
       "original_language": "en",
       "original_title": "My Spy The Eternal City",
@@ -249,11 +200,7 @@
     {
       "adult": false,
       "backdrop_path": "/7ks7A3mAO7twDOvBVE4cR8LaIM8.jpg",
-      "genre_ids": [
-        16,
-        28,
-        18
-      ],
+      "genre_ids": [16, 28, 18],
       "id": 1104844,
       "original_language": "ja",
       "original_title": "劇場版ブルーロック -EPISODE 凪-",
@@ -269,10 +216,7 @@
     {
       "adult": false,
       "backdrop_path": "/8fNBsXpgMvqk75SPsZzTmIqSRxY.jpg",
-      "genre_ids": [
-        27,
-        53
-      ],
+      "genre_ids": [27, 53],
       "id": 646683,
       "original_language": "en",
       "original_title": "The Exorcism",
@@ -288,10 +232,7 @@
     {
       "adult": false,
       "backdrop_path": "/y0XEqAqynGW4uVG8gkOnAf5vcYU.jpg",
-      "genre_ids": [
-        53,
-        27
-      ],
+      "genre_ids": [53, 27],
       "id": 1308757,
       "original_language": "en",
       "original_title": "Dead Sea",
@@ -307,10 +248,7 @@
     {
       "adult": false,
       "backdrop_path": "/pdlQsDrBYJiLSseJNhifC5yhBgF.jpg",
-      "genre_ids": [
-        53,
-        27
-      ],
+      "genre_ids": [53, 27],
       "id": 1241674,
       "original_language": "en",
       "original_title": "The Last Breath",
@@ -326,10 +264,7 @@
     {
       "adult": false,
       "backdrop_path": "/59AJ2w9tKRSbBpnxKfB5UyIg6Jf.jpg",
-      "genre_ids": [
-        27,
-        53
-      ],
+      "genre_ids": [27, 53],
       "id": 1010600,
       "original_language": "en",
       "original_title": "The Strangers: Chapter 1",
@@ -345,11 +280,7 @@
     {
       "adult": false,
       "backdrop_path": "/wsgni4E1UnBuvFouUUanSdniQi0.jpg",
-      "genre_ids": [
-        28,
-        12,
-        18
-      ],
+      "genre_ids": [28, 12, 18],
       "id": 718821,
       "original_language": "en",
       "original_title": "Twisters",
@@ -365,11 +296,7 @@
     {
       "adult": false,
       "backdrop_path": "/viKEEaaCaZ0hZ2nGuvIEozlLooL.jpg",
-      "genre_ids": [
-        27,
-        80,
-        9648
-      ],
+      "genre_ids": [27, 80, 9648],
       "id": 1023922,
       "original_language": "en",
       "original_title": "MaXXXine",
@@ -385,9 +312,7 @@
     {
       "adult": false,
       "backdrop_path": "/pZFuow2rweIqyNHz6xZSxnLVmMc.jpg",
-      "genre_ids": [
-        27
-      ],
+      "genre_ids": [27],
       "id": 1097150,
       "original_language": "en",
       "original_title": "Deliver Us",

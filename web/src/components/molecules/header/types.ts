@@ -4,6 +4,6 @@ type HeaderProps = {
   children?: React.ReactNode | React.ReactNode[];
   className?: string;
   items?: MenuItemProps[];
-}
+};
 
 export default HeaderProps;

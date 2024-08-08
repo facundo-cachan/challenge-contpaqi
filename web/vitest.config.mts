@@ -1,32 +1,32 @@
-import { configDefaults, defineConfig } from 'vitest/config';
+import { configDefaults, defineConfig } from "vitest/config";
 
-import react from '@vitejs/plugin-react';
-import dotenv from 'dotenv';
-import tsconfigPaths from 'vite-tsconfig-paths';
+import react from "@vitejs/plugin-react";
+import dotenv from "dotenv";
+import tsconfigPaths from "vite-tsconfig-paths";
 
-import type { ErrorWithDiff, ParsedStack } from 'vitest';
+import type { ErrorWithDiff, ParsedStack } from "vitest";
 
 dotenv.config();
 
 const testExlussions = [
   ...configDefaults.exclude,
-  '**/node_modules/**',
-  'vitest.setup.ts',
-  '.eslint*.*',
-  'tailwind.config.ts',
+  "**/node_modules/**",
+  "vitest.setup.ts",
+  ".eslint*.*",
+  "tailwind.config.ts",
 ];
 
 export default defineConfig({
   plugins: [tsconfigPaths(), react()],
   test: {
-    diff: './vitest.diff.ts',
-    environment: 'jsdom',
+    diff: "./vitest.diff.ts",
+    environment: "jsdom",
     coverage: {
       enabled: true,
-      provider: 'istanbul',
-      reporter: ['html', 'json'],
+      provider: "istanbul",
+      reporter: ["html", "json"],
       reportOnFailure: true,
-      reportsDirectory: './coverage',
+      reportsDirectory: "./coverage",
       thresholds: {
         branches: 80,
         lines: 80,
@@ -42,22 +42,22 @@ export default defineConfig({
       exclude: testExlussions,
     },
     exclude: testExlussions,
-    reporters: ['verbose'],
+    reporters: ["verbose"],
     globals: true,
-    setupFiles: './src/setupTests.ts',
+    setupFiles: "./src/setupTests.ts",
     onStackTrace(error: ErrorWithDiff, { file }: ParsedStack): boolean | void {
       // If we've encountered a ReferenceError, show the whole stack.
-      if (error.name === 'ReferenceError') {
+      if (error.name === "ReferenceError") {
         return;
       }
 
       // Reject all frames from third party libraries.
-      if (file.includes('node_modules')) {
+      if (file.includes("node_modules")) {
         return false;
       }
     },
-    onConsoleLog(log: string, type: 'stdout' | 'stderr'): boolean | void {
-      return !(log === 'message from third party library' && type === 'stdout');
+    onConsoleLog(log: string, type: "stdout" | "stderr"): boolean | void {
+      return !(log === "message from third party library" && type === "stdout");
     },
   },
 });

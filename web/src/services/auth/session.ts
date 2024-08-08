@@ -10,16 +10,15 @@ const useSession = async () => {
   useEffect(() => {
     if (!user) {
       (async () => {
-        const session = getData('user');
+        const session = getData("user");
         if (session) {
           setUser(session);
         } else {
-          const response = await _fecth({ url: 'auth/me' });
+          const response = await _fecth({ url: "auth/me" });
           setUser(response?.data);
         }
       })();
     }
-
   }, []);
 
   return user;

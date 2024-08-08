@@ -15,6 +15,9 @@
     "test:unit:coverage": "yarn clean && vitest run --coverage",
     "test:unit:ui": "vitest --ui",
     "test:unit:preview": "npx vite preview --outDir ./html",
+    "prettier": "prettier --write .",
+    "check-types": "tsc --pretty --noEmit",
+    "eslint": "eslint --quiet --fix",
     "squash": "git reset $(git merge-base main $(git branch --show-current)) && git add -A"
   },
   "eslintConfig": {
@@ -63,6 +66,7 @@
     "dotenv": "^16.4.5",
     "picocolors": "^1.0.1",
     "postcss": "^8.4.41",
+    "prettier": "^3.3.3",
     "react-error-boundary": "4.0.13",
     "react-scripts": "5.0.1",
     "react-test-renderer": "^18.3.1",

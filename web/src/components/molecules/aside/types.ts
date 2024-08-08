@@ -6,9 +6,9 @@ type MenuItemProps = {
   path: string;
   label: string;
   icon?: React.ReactNode;
-}
+};
 interface AsideProps extends HTMLAttributes<HTMLElement> {
-  dir?: 'row' | 'col';
+  dir?: "row" | "col";
   isOpen?: boolean;
   items?: MenuItemProps[];
 }

@@ -10,12 +10,12 @@ Develop an advanced web application using ReactJS that consumes data from a publ
 
 1. [x] Global state management
 2. [x] Authentication (SSO, OAuth 2.0 or other)
-3. [ ] Optimization (performance, data loading, etc,)
-4. [ ] Unit testing and integration
+3. [x] Optimization (performance, data loading, etc,)
+4. [x] Unit testing and integration
 
 The most important thing is to be able to see a clean, consistent architecture, with known patterns and architectures, ingenuity in applying it and with best practices.
 Among the additional things you could add (which are highly favored) are:
-1. [ ] Including a page dedicated to key indicators (KPIs) with dynamic visualizations (dashboards)
+1. [x] Including a page dedicated to key indicators (KPIs) with dynamic visualizations (dashboards)
 2. [x] Caching Strategy
 
 ## Description

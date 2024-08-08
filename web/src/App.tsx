@@ -1,13 +1,13 @@
-import { Suspense } from 'react';
-import { RouterProvider } from 'react-router-dom';
-import { ErrorBoundary } from 'react-error-boundary';
+import { Suspense } from "react";
+import { RouterProvider } from "react-router-dom";
+import { ErrorBoundary } from "react-error-boundary";
 
-import RecoilNexus from './services/recoil/nexus';
-import routes from './routes';
+import RecoilNexus from "./services/recoil/nexus";
+import routes from "./routes";
 
-import { RecoilRoot } from 'recoil';
+import { RecoilRoot } from "recoil";
 
-import './App.css';
+import "./App.css";
 
 const logError = (error: Error) => {
   // Do something with the error, e.g. log to an external API
@@ -26,7 +26,10 @@ function App() {
       <RecoilRoot>
         <RecoilNexus />
         <Suspense fallback={<div>Loading...</div>}>
-          <RouterProvider router={routes} fallbackElement={<p>Initial Load...</p>} />
+          <RouterProvider
+            router={routes}
+            fallbackElement={<p>Initial Load...</p>}
+          />
         </Suspense>
       </RecoilRoot>
     </ErrorBoundary>
