@@ -8,9 +8,14 @@
     "watch:css": "postcss src/index.css -o src/assets/styles.css",
     "start": "BROWSER=none react-scripts start",
     "build": "npx tailwindcss -o build.css --minify && react-scripts build",
-    "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "test:jest": "jest"
+    "test:unit": "vitest --reporter html",
+    "test:w": "vitest --watch",
+    "test:unit:ci": "vitest run --silent=false",
+    "test:unit:coverage": "yarn clean && vitest run --coverage",
+    "test:unit:ui": "vitest --ui",
+    "test:unit:preview": "npx vite preview --outDir ./html",
+    "squash": "git reset $(git merge-base main $(git branch --show-current)) && git add -A"
   },
   "eslintConfig": {
     "extends": [
@@ -39,6 +44,7 @@
     "react-dom": "18.3.1",
     "react-router-dom": "6.26.0",
     "recoil": "^0.7.7",
+    "styled-components": "^6.1.12",
     "tailwindcss": "3.4.7"
   },
   "devDependencies": {
@@ -50,12 +56,20 @@
     "@types/node": "^22.1.0",
     "@types/react": "18.3.3",
     "@types/react-dom": "18.3.0",
+    "@vitejs/plugin-react": "^4.3.1",
+    "@vitest/coverage-istanbul": "^2.0.5",
+    "@vitest/ui": "^2.0.5",
     "autoprefixer": "^10.4.20",
+    "dotenv": "^16.4.5",
+    "picocolors": "^1.0.1",
     "postcss": "^8.4.41",
     "react-error-boundary": "4.0.13",
     "react-scripts": "5.0.1",
     "react-test-renderer": "^18.3.1",
     "typescript": "5.5.4",
+    "vite-plugin-dts": "^4.0.1",
+    "vite-tsconfig-paths": "^5.0.0",
+    "vitest": "^2.0.5",
     "web-vitals": "4.2.2"
   }
 }

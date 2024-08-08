@@ -3,7 +3,7 @@ import { Button, Icon, Link } from "../../../"
 import { Movie } from "../../../../services/themoviedb"
 
 type CardMovieProps = Movie & {
-  primaryAction?: (ev: any) => void
+  primaryAction?: (ev?: any) => void
 }
 const CardMovie = ({ id, title, poster_path, release_date, primaryAction }: CardMovieProps) => {
   const release = dateFormat(release_date);
@@ -14,12 +14,12 @@ const CardMovie = ({ id, title, poster_path, release_date, primaryAction }: Card
         <Icon name="image-add" size="sm" />
       </Button>
     <div className="h-auto rounded-md w-44">
-      <Link href={link} title={title}>
+      <Link to={link} title={title}>
         <img loading="lazy" src={`https://media.themoviedb.org/t/p/w220_and_h330_face${poster_path}`} srcSet={`https://media.themoviedb.org/t/p/w220_and_h330_face${poster_path} 1x, https://media.themoviedb.org/t/p/w440_and_h660_face${poster_path} 2x`} alt={title} />
       </Link>
     </div>
     <div className="text-center">
-      <h2><Link href={link} title={title}>{title}</Link></h2>
+      <h2><Link to={link} title={title}>{title}</Link></h2>
       <p>{release}</p>
     </div>
   </li>)

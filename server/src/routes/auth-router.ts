@@ -6,6 +6,7 @@ import { ParamMissingError } from "@shared/errors"
 import StatusCodes from "http-status-codes"
 
 import type { Request, Response } from "express"
+import authService from "@services/auth-service"
 
 // Constants
 const router = Router()
@@ -14,6 +15,8 @@ const tokenSession = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3O
 
 // Paths
 export const p = {
+  me: "/me",
+  favorites: "/me/favorites",
   signIn: "/signIn",
   login: "/login",
   logout: "/logout",
@@ -37,6 +40,27 @@ export const cookieProps = Object.freeze({
  * Login a user.
  */
 router
+  .get(p.me, (req: Request, res: Response) => {
+    const user = authService.me(req.headers?.authorization as string);
+    return res.status(OK).json(user).end()
+  })
+  .get(p.favorites, (_: Request, res: Response) => {
+    // const user = authService.me(req);
+    return res.status(OK).json([
+      {
+        id: 533535,
+        title: 'Deadpool & Wolverine'
+      },
+      {
+        id: 1309923,
+        title: 'Non Negotiable'
+      },
+      {
+        id: 748783,
+        title: 'The Garfield Movie'
+      }
+    ]).end()
+  })
   .post(p.login, (req: Request, res: Response) => {
     const { email, password } = req.body;
     console.log({ email, password });
@@ -59,7 +83,7 @@ router
     const { token } = req.body;
     // const user = authService.logout(token);
     if (token === tokenSession) {
-      return res.status(OK).json({ message: 'Good Bye', redirectTo: '/'}).end()
+      return res.status(OK).json({ message: 'Good Bye', redirectTo: '/' }).end()
     }
     return res.status(OK).json({ message: 'Bad token' }).end()
   })

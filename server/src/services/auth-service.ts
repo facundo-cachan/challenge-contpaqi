@@ -11,6 +11,15 @@ import { UnauthorizedError } from "@shared/errors";
  * @param password
  * @returns
  */
+
+async function me(token: string | null) {
+  // decrypt token
+  if (!token) {
+    return null
+  }
+  return { name: 'Facundo', role: 'admin', picture: 'https://avatars.githubusercontent.com/u/29696243?v=4' };
+}
+
 async function login(email: string, password: string): Promise<string> {
   if (email && password) {
     // Fetch user
@@ -36,5 +45,6 @@ async function login(email: string, password: string): Promise<string> {
 
 // Export default
 export default {
+  me,
   login,
 } as const;

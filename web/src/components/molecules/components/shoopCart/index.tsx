@@ -35,7 +35,7 @@ const ShoppingCart = ({ className }: Props) => {
           </li>
         ))}
       </ul>
-      <Button onClick={() => setFavorites([])} $primary>Remove All</Button>
+      <Button onClick={() => setFavorites([])} primary>Remove All</Button>
     </Modal>
   </div>)
 

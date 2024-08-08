@@ -6,7 +6,7 @@ const Aside = ({ children, className, items, dir, isOpen = true }: AsideProps) =
   {!items && children ? children : (
     <ul className={`flex ${dir === 'col'? 'flex-col' : 'flex-row'} items-baseline p-2 space-x-4 md:ui-flex-row`}>
       {items?.map(({ path, label }, i: number) => (<li key={path.replace('/', '')}>
-        <Link href={path === '' ? '/#!' : path} aria-description={`Item Menu ${label}`}>{label}</Link>
+        <Link to={path === '' ? '/#!' : path} aria-describedby={`Item Menu ${label}`}>{label}</Link>
       </li>))}
     </ul>
   )}

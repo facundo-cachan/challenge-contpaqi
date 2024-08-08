@@ -10,6 +10,8 @@ const filteredMovies = (value: string, movies: Movie[]) => movies.filter((movie:
   if (title.includes(value) || release_date.includes(value) || genre.includes(value)) {
     return movie
   }
+
+  return null
 });
 
 export { filteredMovies }

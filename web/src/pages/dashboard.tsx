@@ -1,9 +1,6 @@
-import { now_playing, guest_session } from "../services/themoviedb"
 import { useEffect, useState } from "react"
-import { useRecoilState } from "recoil"
-
+import { now_playing, guest_session } from "../services/themoviedb"
 import { getData } from "../utils/_storage"
-import { selectorFavorites } from "../services/recoil/movies/favorites"
 
 import type { Movie } from "../services/themoviedb"
 
@@ -16,7 +13,6 @@ const extractGenres = (genreIds: any[]) => genreIds.reduce((acc: any, genre: any
 }, []);
 
 const Dashboard = () => {
-  const [favorites, setFavorites] = useRecoilState(selectorFavorites);
   const [movies, setMovies] = useState<Movie[]>([])
 
   useEffect(() => {
