@@ -1,27 +1,30 @@
-import { getData } from '../utils/_storage';
-import axios from 'axios';
+import { getData } from "../utils/_storage";
+import axios from "axios";
 
-import type { AxiosRequestConfig } from 'axios';
+import type { AxiosRequestConfig } from "axios";
 
 type RequestConfig = AxiosRequestConfig;
 
 const serverUrl = process.env.REACT_APP_SERVER_URL;
-
-const config = {
-  headers: {
-    'Access-Control-Allow-Origin': '*',
-    'Content-Type': 'application/json',
-    'Authorization': getData('token')
-  },
-};
-
+const token = process.env.REACT_APP_SESSION_SECRET as string;
 const instance = axios.create({
   baseURL: `${serverUrl}/api/`,
   timeout: 1000,
 });
 
-const _fecth = async ({ url = '', method = 'get', ...props }: RequestConfig) => {
-  if (method === 'post') {
+const _fecth = async ({
+  url = "",
+  method = "get",
+  ...props
+}: RequestConfig) => {
+  const config = {
+    headers: {
+      "Access-Control-Allow-Origin": "*",
+      "Content-Type": "application/json",
+      Authorization: await getData(token),
+    },
+  };
+  if (method === "post") {
     try {
       return await instance.post(url, props.data, config);
     } catch (err) {
@@ -34,6 +37,6 @@ const _fecth = async ({ url = '', method = 'get', ...props }: RequestConfig) => 
       console.error(err);
     }
   }
-}
+};
 
 export default _fecth;

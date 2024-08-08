@@ -1,7 +1,9 @@
-import type ModalProps from './types';
+import type ModalProps from "./types";
 
 const Modal = ({ children, className }: ModalProps) => (
-  <div className={`flex flex-col rounded-lg drop-shadow-2xl absolute ${className}`}>
+  <div
+    className={`flex flex-col rounded-lg drop-shadow-2xl absolute ${className}`}
+  >
     {children}
   </div>
 );

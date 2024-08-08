@@ -1,11 +1,11 @@
-import Layout from '../layout/default';
-import { createBrowserRouter, redirect } from 'react-router-dom';
-import Home from '../pages/home';
-import Dashboard from '../pages/dashboard';
-import Login from '../pages/login';
-import login from '../services/auth/login';
-import logout from '../services/auth/logout';
-import signIn from '../services/auth/signIn';
+import Layout from "../layout/default";
+import { createBrowserRouter, redirect } from "react-router-dom";
+import Home from "../pages/home";
+import Dashboard from "../pages/dashboard";
+import Login from "../pages/login";
+import login from "../services/auth/login";
+import logout from "../services/auth/logout";
+import signIn from "../services/auth/signIn";
 
 const router = createBrowserRouter([
   {
@@ -19,19 +19,27 @@ const router = createBrowserRouter([
       },
       {
         path: "login",
+        Component: Login,
         action: async ({ request }) => {
           const formData = await request.formData();
-          const { redirectTo, message } = await login({ email: formData.get("email") as string, password: formData.get("password") as string });
+          const { redirectTo, message } = await login({
+            email: formData.get("email") as string,
+            password: formData.get("password") as string,
+          });
 
-          if (redirectTo) {
-            return redirect(redirectTo);
-          }
-          return message
+          console.log({ redirectTo, message });
+
+          return redirectTo ? redirect(redirectTo) : message;
         },
-        Component: Login,
+        loader: async (props) => {
+          console.log("Login page loader", props);
+
+          return null;
+        },
       },
       {
         path: "dashboard",
+        Component: Dashboard,
         loader: async () => {
           const isLogged = await signIn();
 
@@ -41,7 +49,6 @@ const router = createBrowserRouter([
 
           return null;
         },
-        Component: Dashboard,
       },
     ],
   },
@@ -61,4 +68,4 @@ const router = createBrowserRouter([
   },
 ]);
 
-export default router
+export default router;
