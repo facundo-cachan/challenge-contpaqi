@@ -53,6 +53,12 @@ const router = createBrowserRouter([
       return service ? redirect("/") : null;
     },
   },
+  {
+    path: "/admin",
+    loader: async () => {
+      return redirect("/dashboard");
+    },
+  },
 ]);
 
 export default router

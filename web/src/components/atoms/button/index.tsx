@@ -12,10 +12,9 @@ const Button = ({ children, onClick = () => console.log('Click', children), ...p
 }
 
 const StyledButton = styled(Button)`
-  background: ${props => props.$primary ? "blue" : "gray-light"};
-  color: ${props => props.$primary ? "purple" : "gray-dark"};
+  color: ${({primary}) => primary ? 'rgb(0 58 113)' : 'rgb(250 250 250)'};
+  background: ${({primary}) => primary ? 'rgb(250 250 250)' : 'rgb(0 58 113)'};
   font-size: 1em;
-  margin: 1em;
   padding: 0.25em 1em;
   border-radius: 3px;
 `;

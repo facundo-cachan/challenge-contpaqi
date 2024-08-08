@@ -1,14 +1,11 @@
-import { now_playing, genres, guest_session } from "../services/themoviedb"
+import { now_playing, guest_session } from "../services/themoviedb"
 import { useEffect, useState } from "react"
 import { useRecoilState } from "recoil"
 
-import { CardMovie, Input, ShoppingCart } from "../components"
 import { getData } from "../utils/_storage"
-import { filteredMovies } from "../utils/_filter"
 import { selectorFavorites } from "../services/recoil/movies/favorites"
 
 import type { Movie } from "../services/themoviedb"
-import type { FavoritesProps } from "../services/recoil/movies/favorites"
 
 const extractGenres = (genreIds: any[]) => genreIds.reduce((acc: any, genre: any) => {
   const moviesGenres = getData('genre');

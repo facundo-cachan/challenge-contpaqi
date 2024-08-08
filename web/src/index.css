@@ -3,6 +3,9 @@
 @tailwind utilities;
 
 @layer components {
+  .cell {
+    @apply align-middle items-center justify-center flex p-0
+  }
   .column_content {
     @apply flex flex-row w-screen overflow-x-scroll
   }

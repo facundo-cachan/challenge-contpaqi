@@ -5,25 +5,25 @@
 import { atom, selector } from 'recoil';
 
 import persistAtom from '../persistAtom';
-import { Genre } from '../../themoviedb';
+import { Movie } from '../../../services/themoviedb';
 
-const key = 'genre';
+const key = 'now_playing';
 
-export const atomGenre = atom<Genre[]>({
+export const atomNowPlaying = atom<Movie[]|[]>({
   default: [],
   key,
   effects: [persistAtom(key)],
 })
-export const selectorGenre = selector({
+export const selectorNowPlaying = selector({
   key: `${key}Selector`,
-  get: ({ get }) => get(atomGenre),
+  get: async ({ get }) => get(atomNowPlaying),
   set: ({ set }, newValue) => {
     set(
-      atomGenre,
+      atomNowPlaying,
       newValue
     )
   }
 })
 
 
-export default selectorGenre
+export default selectorNowPlaying

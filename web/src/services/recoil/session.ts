@@ -13,8 +13,8 @@ export const session = atom<string | null>({
   key,
   effects: [persistAtom(key)],
 })
-export const selectorSession = selector({
-  key: 'selectorSession',
+const selectorSession = selector({
+  key: `${key}Selector`,
   get: ({ get }) => get(session),
   set: ({ set }, newValue) => {
     set(

@@ -1,7 +1,7 @@
 import React, { useEffect, useState, createContext, useContext, useCallback, useMemo } from 'react';
 import _fecth from '../fetch';
 
-type User = {
+export type User = {
   name: string;
   role: string;
   picture: string;

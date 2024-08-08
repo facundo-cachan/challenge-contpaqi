@@ -2,8 +2,8 @@
 
 import type IconProps from './types'
 
-const Icon = ({ name, size = 'md', className = '' }: IconProps) => (
-  <i className={`bx bx-${name} bx-${size} ${className}`} />
+const Icon = ({ name, type = '', size = 'md', className = '' }: IconProps) => (
+  <i className={`bx bx${type}-${name} bx-${size} ${className}`} />
 );
 
 export default Icon;
