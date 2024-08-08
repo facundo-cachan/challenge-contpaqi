@@ -11,8 +11,6 @@ import type { Request, Response } from "express";
 // Constants
 const router = Router();
 const { OK } = StatusCodes;
-const tokenSession =
-  "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZSI6IkZhY3VuZG8iLCJyb2xlIjoiYWRtaW4iLCJnaXRodWJJRCI6IjI5Njk2MjQzIiwiaWF0IjoyMDE2MjM5MDIyfQ.CVcDPNlFzmagx1vGwvMxMovhFE0YOiesOvF8CSY1m40";
 
 // Paths
 export const p = {
@@ -104,7 +102,7 @@ router
   .post(p.logout, (req: Request, res: Response) => {
     const { token } = req.body;
     // const user = authService.logout(token);
-    if (token === tokenSession) {
+    if (token) {
       return res
         .status(OK)
         .json({ message: "Good Bye", redirectTo: "/" })
